@@ -4,86 +4,214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apex Token | Official</title>
-<link rel="stylesheet" href="./Apex_test/style.css">
+
+<!-- WEB3 -->
 <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #050816;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Neon Grid Background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background:
+    repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0px, rgba(0,255,255,0.05) 1px, transparent 1px, transparent 50px),
+    repeating-linear-gradient(90deg, rgba(255,0,255,0.05) 0px, rgba(255,0,255,0.05) 1px, transparent 1px, transparent 50px);
+    animation: moveGrid 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveGrid {
+    from { transform: translate(0,0); }
+    to { transform: translate(-50px,-50px); }
+}
+
+header {
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav a {
+    color: #00f7ff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.connect-btn {
+    background: linear-gradient(90deg,#00f7ff,#ff00ff);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 0 20px #00f7ff;
+    cursor: pointer;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center,#0f172a,#050816);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg,#00f7ff,#ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.launchpad {
+    margin: 100px auto;
+    padding: 60px;
+    max-width: 700px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(255,0,255,0.2);
+}
+
+.progress-container {
+    background: #111;
+    height: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    background: linear-gradient(90deg,#00f7ff,#ff00ff);
+    box-shadow: 0 0 15px #00f7ff;
+    transition: 0.5s;
+}
+
+input {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg,#00f7ff,#ff00ff);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00f7ff;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">APEX</div>
+  <div>APEX TOKEN</div>
   <nav>
     <a href="#about">About</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#roadmap">Roadmap</a>
     <a href="#presale">Presale</a>
   </nav>
-  <button onclick="connectWallet()" class="connect-btn">Connect Wallet</button>
+  <button class="connect-btn" onclick="connectWallet()">Connect Wallet</button>
 </header>
 
 <section class="hero">
-  <h1>The Future of Web3 Starts With Apex</h1>
-  <p>Next generation decentralized ecosystem on BNB Chain.</p>
-  <a href="#presale" class="cta-btn">Join Presale</a>
+  <h1>The Future of Web3 Starts Here</h1>
+  <p>Powered by BNB Smart Chain</p>
 </section>
 
 <section id="about" class="section">
   <h2>About Apex</h2>
-  <p>
-    Apex Token is a decentralized Web3 ecosystem built on BNB Chain,
-    focused on scalability, security and real DeFi utilities.
-  </p>
-</section>
-
-<section id="tokenomics" class="section">
-  <h2>Tokenomics</h2>
-  <div class="token-grid">
-    <div>Presale – 40%</div>
-    <div>Liquidity – 30%</div>
-    <div>Marketing – 15%</div>
-    <div>Team – 10%</div>
-    <div>Reserve – 5%</div>
-  </div>
-</section>
-
-<section id="roadmap" class="section">
-  <h2>Roadmap</h2>
-  <ul class="roadmap">
-    <li>Q1 – Token Launch</li>
-    <li>Q2 – Presale & DEX Listing</li>
-    <li>Q3 – Staking Platform</li>
-    <li>Q4 – Ecosystem Expansion</li>
-  </ul>
+  <p>Next generation decentralized ecosystem with secure presale launchpad.</p>
 </section>
 
 <section id="presale" class="launchpad">
-  <h2>Apex Presale</h2>
-  <div id="saleStatus">Loading...</div>
+  <h2>Presale Live</h2>
 
-  <div id="timer">00:00:00</div>
+  <div id="saleStatus">Waiting...</div>
 
   <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
   <p id="raisedAmount">Raised: 0 BNB</p>
-  <p id="userContribution">Your Contribution: 0 BNB</p>
+  <p id="walletAddress">Not connected</p>
 
   <input type="number" id="bnbAmount" placeholder="Enter BNB amount">
   <button onclick="buyToken()">Buy Tokens</button>
-  <button onclick="claimTokens()">Claim</button>
 </section>
 
-<section class="section faq">
-  <h2>FAQ</h2>
-  <p><strong>Which network?</strong> BNB Smart Chain</p>
-  <p><strong>Is liquidity locked?</strong> Yes</p>
-  <p><strong>Audit?</strong> Coming soon</p>
-</section>
+<script>
+let web3;
+let user;
 
-<footer>
-  <p>© 2026 Apex Token. All Rights Reserved.</p>
-</footer>
+async function connectWallet() {
+    if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const accounts = await web3.eth.getAccounts();
+        user = accounts[0];
 
-<script src="https://raw.githubusercontent.com/Tete1676/Apex_test/refs/heads/main/script.js"></script>
+        document.getElementById("walletAddress").innerText =
+        "Connected: " + user.slice(0,6) + "..." + user.slice(-4);
+
+        document.getElementById("saleStatus").innerText = "Wallet Connected";
+    } else {
+        alert("Install MetaMask");
+    }
+}
+
+function buyToken() {
+    let amount = document.getElementById("bnbAmount").value;
+
+    if (!amount) {
+        alert("Enter BNB amount");
+        return;
+    }
+
+    alert("Simulated purchase of " + amount + " BNB 🚀");
+}
+
+/* Fake Progress Animation */
+let progress = 0;
+setInterval(() => {
+    if (progress < 70) {
+        progress += 1;
+        document.getElementById("progressBar").style.width = progress + "%";
+        document.getElementById("raisedAmount").innerText =
+        "Raised: " + progress/10 + " BNB";
+    }
+}, 100);
+</script>
+
 </body>
 </html>
