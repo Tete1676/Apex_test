@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Token | Official</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="logo">APEX</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#presale">Presale</a>
+  </nav>
+  <button onclick="connectWallet()" class="connect-btn">Connect Wallet</button>
+</header>
+
+<section class="hero">
+  <h1>The Future of Web3 Starts With Apex</h1>
+  <p>Next generation decentralized ecosystem on BNB Chain.</p>
+  <a href="#presale" class="cta-btn">Join Presale</a>
+</section>
+
+<section id="about" class="section">
+  <h2>About Apex</h2>
+  <p>
+    Apex Token is a decentralized Web3 ecosystem built on BNB Chain,
+    focused on scalability, security and real DeFi utilities.
+  </p>
+</section>
+
+<section id="tokenomics" class="section">
+  <h2>Tokenomics</h2>
+  <div class="token-grid">
+    <div>Presale – 40%</div>
+    <div>Liquidity – 30%</div>
+    <div>Marketing – 15%</div>
+    <div>Team – 10%</div>
+    <div>Reserve – 5%</div>
+  </div>
+</section>
+
+<section id="roadmap" class="section">
+  <h2>Roadmap</h2>
+  <ul class="roadmap">
+    <li>Q1 – Token Launch</li>
+    <li>Q2 – Presale & DEX Listing</li>
+    <li>Q3 – Staking Platform</li>
+    <li>Q4 – Ecosystem Expansion</li>
+  </ul>
+</section>
+
+<section id="presale" class="launchpad">
+  <h2>Apex Presale</h2>
+  <div id="saleStatus">Loading...</div>
+
+  <div id="timer">00:00:00</div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <p id="raisedAmount">Raised: 0 BNB</p>
+  <p id="userContribution">Your Contribution: 0 BNB</p>
+
+  <input type="number" id="bnbAmount" placeholder="Enter BNB amount">
+  <button onclick="buyToken()">Buy Tokens</button>
+  <button onclick="claimTokens()">Claim</button>
+</section>
+
+<section class="section faq">
+  <h2>FAQ</h2>
+  <p><strong>Which network?</strong> BNB Smart Chain</p>
+  <p><strong>Is liquidity locked?</strong> Yes</p>
+  <p><strong>Audit?</strong> Coming soon</p>
+</section>
+
+<footer>
+  <p>© 2026 Apex Token. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
